@@ -1,0 +1,20 @@
+!!!xml1.0
+~odoo
+    ~data
+
+    ~record id="hr.hr_employee_public_action" model='ir.actions.act_window'
+        @view_mode: tree,kanban,form
+
+    ~record #hr_employee_public_view_in_out_tree model='ir.ui.view'
+        @name: hr.employee.in_out_board.tree
+        @model: hr.employee.public
+        @priority eval='15'
+        @arch type='xml'
+            ~tree $Employees
+                @name
+                @image_128 $Image widget='image' height='48'
+                @io_phones
+                @work_email
+                @io_punch_image_in widget='image' height='48'
+                @io_punch_image_out widget='image' height='48'
+                @department_id

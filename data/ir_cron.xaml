@@ -1,0 +1,14 @@
+!!!xml1.0
+
+~odoo
+    ~data noupdate='1'
+
+        ~record #ir_cron_in_out_board_update model='ir.cron'
+            @name: In/Out Board: Update
+            @model_id ref='model_in_out_board_punch'
+            @state: code
+            @code: model._process_punch_files()
+            @user_id ref='base.user_root'
+            @interval_number: 5
+            @interval_type: minutes
+            @numbercall: -1
